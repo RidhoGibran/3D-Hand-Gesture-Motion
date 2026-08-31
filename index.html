@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gesture 3D Particle Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- MediaPipe Hands -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gesture 3D Particle Visualizer</h1>
+      <p>Arahkan tangan ke kamera untuk mengontrol partikel 3D</p>
+    </header>
+
+    <div class="main-content">
+      <div class="webcam-box">
+        <video id="webcam" autoplay playsinline></video>
+        <canvas id="output_canvas" width="640" height="480"></canvas>
+      </div>
+
+      <div class="control-panel">
+        <h2>Status Gestur</h2>
+        <div id="gesture-name" class="status-badge">Menunggu Kamera...</div>
+
+        <button id="btn-popup" class="btn-primary">Buka Jendela Visualizer 3D</button>
+
+        <div class="instructions">
+          <h3>Panduan Gestur:</h3>
+          <ul>
+            <li>👆 <strong>1 Jari (Telunjuk):</strong> Segitiga 🔺</li>
+            <li>✌️ <strong>2 Jari (Peace):</strong> Teks "ME & YOU" 💜</li>
+            <li>✊ <strong>1 Tangan Mengepal:</strong> Persegi ⬛</li>
+            <li>✋ <strong>1 Tangan Terbuka:</strong> Lingkaran 🔴</li>
+            <li>✊ + ✊ <strong>2 Tangan Mengepal:</strong> Hati ❤️</li>
+            <li>✋ + ✋ <strong>2 Tangan Terbuka:</strong> Teks "ABSOLUTE CINEMA" </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="validasi.js"></script>
+</body>
+</html>
